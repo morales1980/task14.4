@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
+  <link rel="stylesheet" href="css/style.css">
+  <title>task14.4</title>
+</head>
+<body>
+  <div id="carousel-container"></div>
+  <div class="progress-bar"></div>
+  <button class="button-restart" type="button">Restart carousel</button>
+  <div id="map" class="map"></div>
+  <p class="nav">
+    View:
+    <a class="nav-item" href="#carousel-cell-1">Slide 1</a>
+    <a class="nav-item" href="#carousel-cell-2">Slide 2</a>
+    <a class="nav-item" href="#carousel-cell-3">Slide 3</a>
+    <a class="nav-item" href="#carousel-cell-4">Slide 4</a>
+    <a class="nav-item" href="#carousel-cell-5">Slide 5</a>
+  </p>
+  <script id="template-carousel" type="x-tmpl-mustache">
+    <div class="carousel">
+      {{{carouselItems}}}
+    </div>
+  </script>
+
+  <script id="template-carousel-cell" type="x-tmpl-mustache">
+    <div class="carousel-cell" id="carousel-cell-{{id}}">
+      <div class="container">
+        <p class="slide-header">{{title}}</p>
+        <img src="{{image}}" alt="{{alt}}">
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/javascript" src="vendor/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="vendor/hash.js"></script>
+  <script type="text/javascript" src="vendor/mustache.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbR6_PSNN1lUCuLQ4AYiz4Vv-grJ-5xMU&callback=initMap"></script>
+</body>
+</html>
